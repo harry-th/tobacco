@@ -1,0 +1,189 @@
+﻿.like-or-remove {
+  position: absolute;
+  left: 81vw;
+}
+.like-or-remove #removeitems {
+  font-size: 10px;
+}
+.like-or-remove #removeitems:hover {
+  background-color: rgb(100, 0, 0);
+  color: gold;
+}
+
+form.main-search-form {
+  background-color: darkslategrey;
+}
+
+.top-search-bar {
+  background-color: darkslategrey;
+  color: gold;
+  display: flex;
+  padding: 20px;
+}
+.top-search-bar .search-section {
+  margin-right: 15px;
+}
+.top-search-bar .search-section > label {
+  font-weight: 600;
+}
+.top-search-bar .search-section.submit {
+  display: flex;
+  align-items: flex-end;
+}
+.top-search-bar input[type=submit], .top-search-bar button {
+  color: darkslategrey;
+  background-color: gold;
+  padding: 5px;
+  max-height: 40px;
+  margin: 5px;
+}
+
+main.page-content {
+  display: flex;
+}
+
+.sidebarsearch {
+  background-color: darkslategrey;
+  color: gold;
+  min-width: 250px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 17%;
+}
+.sidebarsearch div.form-group span {
+  display: inline-block;
+  min-width: 145px;
+}
+.sidebarsearch .search-section {
+  margin-bottom: 15px;
+}
+.sidebarsearch .search-section > label {
+  font-weight: 600;
+}
+.sidebarsearch button {
+  color: darkslategrey;
+  background-color: gold;
+  float: right;
+  margin-right: 20px;
+}
+.sidebarsearch div.flavorTypes {
+  max-height: 200px;
+  overflow: scroll;
+  width: 300px;
+  background-color: darkolivegreen;
+}
+.sidebarsearch div.flavorTypes::-webkit-scrollbar {
+  display: none;
+}
+
+.tobacco-section {
+  width: 80%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  background-color: #A26A42;
+  border-radius: 4px;
+}
+
+.tobaccoResults {
+  width: 98%;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #D0B39E;
+  border-radius: 6px;
+}
+
+.tobaccoItem {
+  height: 200px;
+  width: 12%;
+  min-width: 140px;
+  max-width: 200px;
+  background: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 4px;
+  border: 1px solid rgb(40, 0, 0);
+  border-collapse: collapse;
+  margin: 2px;
+  background-color: white;
+}
+.tobaccoItem input[type=checkbox] {
+  accent-color: gold;
+}
+.tobaccoItem .card-header-overlay {
+  background-color: rgba(40, 70, 70, 0.45);
+  height: fit-content;
+}
+.tobaccoItem h4 {
+  line-height: 11px;
+  padding: 4px;
+  font-size: 12px;
+}
+.tobaccoItem h4 a {
+  text-decoration: none;
+  color: gold;
+  font-weight: 700;
+  font-size: 14px;
+}
+.tobaccoItem button {
+  color: gold;
+  background-color: darkslategrey;
+}
+.tobaccoItem button.btn-danger {
+  background-color: red;
+}
+.tobaccoItem button.btn-danger:focus {
+  box-shadow: none;
+  color: gold;
+}
+.tobaccoItem span.button-container {
+  display: block;
+}
+.tobaccoItem span.button-container button {
+  margin: 3px;
+  padding: 2px;
+}
+.tobaccoItem span.button-container button:hover {
+  color: palevioletred;
+}
+.tobaccoItem span.button-container button .btn-danger:focus {
+  box-shadow: none;
+  text-shadow: none;
+}
+.tobaccoItem footer {
+  background-color: rgba(40, 70, 70, 0.45);
+  font-size: 12px;
+  color: white;
+  text-align: center;
+}
+
+.card-header {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-bottom: none;
+}
+
+.card-header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 30px;
+}
+
+.card-title {
+  margin: 0;
+  text-align: center;
+}
+
+.card {
+  padding: 0px;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22file:///C:/Users/jerry/source/repos/Razor%2520MVC%2520project/Razor%2520MVC%2520project/Styles/ListStyles.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAC;EACG;EACA;;AACA;EACI;;AACA;EACI;EACA;;;AAKZ;EACI;;;AAGJ;EACI;EACA;EACA;EACA;;AAEA;EACI;;AAEA;EACI;;AAGJ;EACI;EACA;;AAIR;EACI;EACA;EACA;EACA;EACA;;;AAIR;EACI;;;AAGJ;EACI;EACA;EACA;EACA;EACA;EACA;;AAGI;EACI;EACA;;AAIR;EACI;;AAEA;EACI;;AAIR;EACI;EACA;EACA;EACA;;AAGJ;EACI;EACA;EACA;EACA;;AAEA;EACI;;;AAKZ;EACI;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;;AAGJ;EACI;EACA;;AAGJ;EACI;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA;;AAIR;EACI;EACA;;AAEA;EACI;;AAEA;EACI;EACA;;AAKZ;EACI;;AAEA;EACI;EACA;;AAEA;EACI;;AAGJ;EACI;EACA;;AAKZ;EACI;EACA;EACA;EACA;;;AAKR;EACI;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;EACA;;;AAGJ;EACI;EACA;;;AAGJ;EACI%22%7D */
