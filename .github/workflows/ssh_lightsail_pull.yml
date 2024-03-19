@@ -28,8 +28,8 @@ jobs:
          else
           DB_CONNECTION_STRING=${{ secrets.DB_CONNECTION_STRING }}
           tmux send-keys -t tobacco-site C-c Enter
-          tmux send-keys -t tobacco-site 'export DefaultConnection="$DB_CONNECTION_STRING"' Enter
-          tmux send-keys -t tobacco-site dotnet 'Razor MVC project.dll' Enter
+          tmux send-keys -t tobacco-site "export DefaultConnection=$DB_CONNECTION_STRING" Enter
+          tmux send-keys -t tobacco-site "dotnet Razor MVC project.dll" Enter
          fi
         EOF
      
