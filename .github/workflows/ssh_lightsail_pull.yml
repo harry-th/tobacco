@@ -22,8 +22,7 @@ jobs:
         sudo apt-get install tmux
         ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@${{ secrets.LIGHTSAIL_ADDRESS }}  << 'EOF'
         cd /var/www/tobacco_site/tobacco
-        sudo git pull || exit 1
-         if sudo git pull | grep -q 'Already up to date'; then
+         if ( sudo git pull || exit 1) | grep -q 'Already up to date'; then
           echo "No changes pulled. Skipping tmux commands."
            else
           DB_CONNECTION_STRING=${{ secrets.DB_CONNECTION_STRING }}
