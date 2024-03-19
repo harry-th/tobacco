@@ -24,7 +24,8 @@ jobs:
         cd /var/www/tobacco_site
         sudo git pull
          if sudo git pull | grep -q 'Already up to date'; then
-          echo "No changes pulled. Skipping tmux commands."
+          echo "No changes pulled. trying tmux commands anyway."
+          tmux send-keys -t tobacco_site "echo Hello, world!" Enter
          else
           echo "tmux commands being run"
          fi
