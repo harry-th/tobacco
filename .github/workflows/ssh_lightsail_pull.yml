@@ -26,7 +26,9 @@ jobs:
          if sudo git pull | grep -q 'Already up to date'; then
           echo "No changes pulled. Skipping tmux commands."
          else
+          DB_CONNECTION_STRING=${{ secrets.DB_CONNECTION_STRING }}
           tmux send-keys -t tobacco-site C-c Enter
+          tmux send-keys export DefaultConnection="$DB_CONNECTION_STRING"
           tmux send-keys -t tobacco-site dotnet 'Razor MVC project.dll' Enter
          fi
         EOF
