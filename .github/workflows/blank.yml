@@ -1,0 +1,21 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Copy SSH private key
+      run: echo "${{ secrets.SSH_LIGHTSAIL }}" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+
+    - name: Install SSH client
+      run: sudo apt-get install -y openssh-client
+
+    - name: Deploy to Lightsail
+      run: |
+        ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@${{ LIGHTSAIL_ADDRESS }}
+        ls
