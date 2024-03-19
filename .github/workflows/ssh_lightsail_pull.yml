@@ -18,7 +18,7 @@ jobs:
       run: sudo apt-get install -y openssh-client
 
     - name: Deploy to Lightsail
-      run: |
+      run: | 
         sudo apt-get install tmux
         ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@${{ secrets.LIGHTSAIL_ADDRESS }}  << 'EOF'
         cd /var/www/tobacco_site
