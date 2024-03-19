@@ -22,14 +22,21 @@ jobs:
         sudo apt-get install tmux
         ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@${{ secrets.LIGHTSAIL_ADDRESS }}  << 'EOF'
         cd /var/www/tobacco_site/tobacco
-        sudo git pull
+        sudo git pull || exit 1
          if sudo git pull | grep -q 'Already up to date'; then
           echo "No changes pulled. Skipping tmux commands."
-         else
+           else
           DB_CONNECTION_STRING=${{ secrets.DB_CONNECTION_STRING }}
           tmux send-keys -t tobacco-site C-c Enter
           tmux send-keys -t tobacco-site "export DefaultConnection=\"$DB_CONNECTION_STRING\"" Enter
           tmux send-keys -t tobacco-site "dotnet 'Razor MVC project.dll'" Enter
+           sleep 10  # Wait for application to start (adjust duration as needed)
+           if pgrep -x "dotnet" > /dev/null; then
+           echo "Application process is running."
+            else
+           echo "Error: Application process not found."
+           exit 1  
+           fi
          fi
         EOF
      
