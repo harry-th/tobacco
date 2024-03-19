@@ -25,11 +25,11 @@ jobs:
         sudo git pull
          if sudo git pull | grep -q 'Already up to date'; then
           echo "No changes pulled. trying tmux commands anyway."
-          tmux send-keys -t tobacco_site "echo Hello, world!" Enter
+          tmux send-keys -t tobacco-site "echo Hello, world!" Enter
          else
           echo "tmux commands being run"
          fi
         EOF
-        #tmux send-keys -t tobacco_site C-c Enter
-        #tmux send-keys -t tobacco_site dotnet 'Razor MVC project.dll' Enter
+        #tmux send-keys -t tobacco-site C-c Enter
+        #tmux send-keys -t tobacco-site dotnet 'Razor MVC project.dll' Enter
         
