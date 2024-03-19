@@ -19,7 +19,16 @@ jobs:
 
     - name: Deploy to Lightsail
       run: |
-        ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@${{ secrets.LIGHTSAIL_ADDRESS }}  << EOF
-        cd /var/www
-        ls
+        sudo apt-get install tmux
+        ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@${{ secrets.LIGHTSAIL_ADDRESS }}  << 'EOF'
+        cd /var/www/tobacco_site
+        sudo git pull
+         if sudo git pull | grep -q 'Already up to date'; then
+          echo "No changes pulled. Skipping tmux commands."
+         else
+          echo "tmux commands being run"
+         fi
         EOF
+        #tmux send-keys -t tobacco_site C-c Enter
+        #tmux send-keys -t tobacco_site dotnet 'Razor MVC project.dll' Enter
+        
