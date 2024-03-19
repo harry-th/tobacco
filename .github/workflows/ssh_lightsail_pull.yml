@@ -20,4 +20,6 @@ jobs:
     - name: Deploy to Lightsail
       run: |
         ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@${{ secrets.LIGHTSAIL_ADDRESS }}
+        << EOF
         ls
+        EOF
